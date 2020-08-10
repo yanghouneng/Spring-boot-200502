@@ -1,0 +1,98 @@
+============= day_01 ===========
+知识回顾
+	Spring
+		ioc、aop（oop）、事务、mvc
+准备工作
+	环境
+		java：jdk8
+		ied：idea
+		maven：3.x
+		mysql：5.x
+		代码管理：git（github、码云）
+	常用软件：
+		浏览器：firefox、chrome
+		文本编译器：noted++
+		测试工具：postman
+	常用的网址
+		maven：https://mvnrepository.com
+		码云: https://gitee.com/
+
+Spring Boot 基础介绍
+	spring boot 不是一个新的框架，基于spring 4.0，就像maven 一样，它整合了大量主流的第三方框架，形成的一套“快速开发的框架”；
+	特性
+		快速开发；
+		pom，以 starter 形式，按照组类聚了多个jar，形成单条依赖，以父子继承的方式，实现 jar 版本的控制；
+		“习惯优于配置”，简化了配置，没有web.xml
+		注解开发
+		内嵌式的servlet容器，无需外置容器
+		监控的方便性
+	why？
+		配置、编码、部署变得简单
+	mvc、boot、cloud
+		mvc：spring web框架，
+		boot：集成了 mvc、垂直的框架大集成者；
+		cloud：分布式应用的大集成者，三维立体的，每一个应用基于 boot；
+
+常用的注解
+	@SpringBootApplication：启动boot 项目
+	@Configuration：配置类注解 ---- <beans></beans>；
+	@Bean：注册 bean 注解 ---- <bean></bean>；
+	@PropertySource ---- 绑定配置文件；
+	@ConfigurationProperties ---- 设置配置类属性
+	@Value：读取配置文件 || 读取配置文件属性；
+	@Component：注册 spring 组件；
+	@Autowired ---- 按照 bean 的类型组装 Bean
+	@Resource ---- 按照 Bean 的名字组装 Bean；
+	@Aspect（@Bedore、@Aroud、@After、@PointCut、@Oder） ----- Aop 注解
+	@Transational ---- 事务注解
+	@Controller（RestControler） ----- 控制层注解
+		@RequestMapping、@GetMapping、@PostMapping、@PutMapping、@DeleteMapping
+	@Service ----- 服务层注解
+	@Repository ---- 持久层注解
+	
+搭建 Spring Boot 框架
+	folder、source folder、resource folder、fackage 四者的区别
+	规范性：结构清晰、缩进清晰、命名清晰、逻辑清晰
+	
+配置文件
+	种类：
+		bootstrap.property(yml) ---- 父上下文配置
+		application.property（yml） ---- 全局配置文件
+		其他配置文件：log
+	优先级
+		相同位置，property > yml
+		不同的位置
+			外置 /config/application.property(yml)
+			外置 /application.property(yml)
+			内置 /config/application.property(yml)
+			内置 /application.property(yml)
+	读取
+		全局配置文件： @Value 读取配置文件中的值
+		
+logback 日志系统
+	步骤一：pom导入相关 jar ---- 已经引入，无需手动添加
+	步骤二：配置
+		特有配置文件 ---- logback-dev.xml
+		全局配置文件
+			# for log
+			logging.config=classpath:config/logback-dev.xml
+		配置类
+	步骤三：应用
+		
+		
+			
+	
+	
+作业
+	创建一个 spring boot 项目，提交到远程代码仓库。 ----- 各位远程代码仓库的地址
+	完成配置文件读取，以接口的方式运行出来
+	加入logback日志系统
+	思考题：如何将 spring boot 项目打包成 war，部署到外置 tomcat 项目，并运行成功
+	
+	
+		
+		
+		
+		
+		
+		
