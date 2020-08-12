@@ -19,6 +19,10 @@ public class CountryController {
 
     /**
      * 127.0.0.1/api/country/481 ---- get
+     * @PathVariable ： 接收路径参数
+     *  @RequestBody ：接收json参数
+     *  consumes = "application/json" :进入控制器的数据类型
+     *  produce="application/json"  ：控制器输出数据类型
      */
     @GetMapping("/country/{countryId}")
     public Country getCountryByCountryId(@PathVariable int countryId) {

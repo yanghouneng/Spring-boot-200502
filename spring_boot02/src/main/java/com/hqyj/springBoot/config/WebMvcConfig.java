@@ -15,14 +15,14 @@ import org.springframework.context.annotation.Configuration;
  * @Author HymanHu
  * @Date 2020/8/11 10:28
  */
-@Configuration
+@Configuration   //配置类注解
 @AutoConfigureAfter({WebMvcAutoConfiguration.class})
 public class WebMvcConfig {
 
     @Value("${server.http.port}")  //获取配置文件的值
     private int httpPort;
 
-    @Bean
+    @Bean  //注册bean注解
     public Connector connector() {
         Connector connector = new Connector();
         connector.setPort(httpPort);

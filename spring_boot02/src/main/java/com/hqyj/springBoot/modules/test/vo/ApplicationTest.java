@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
  * @Author HymanHu
  * @Date 2020/8/10 15:51
  */
-@Component
-@PropertySource("classpath:config/applicationTest.properties")
-@ConfigurationProperties(prefix = "com.qq")
+@Component   //扫描组件
+@PropertySource("classpath:config/applicationTest.properties")   //绑定配置文件
+@ConfigurationProperties(prefix = "com.qq")  //设置配置类属性
 public class ApplicationTest {
     private int port;
     private String name;
