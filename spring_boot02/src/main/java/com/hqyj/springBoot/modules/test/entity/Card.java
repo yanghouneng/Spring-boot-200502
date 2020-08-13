@@ -21,7 +21,7 @@ public class Card {
     /**
      * OneToOne：一对一关系中，一方使用 JoinColumn 注解（有外键），另一方使用 mappedBy 属性（可选）
      * cascade：联级操作
-     * fetch：加载数据策略
+     * fetch：加载数据策略1111
      * JsonIgnore：不序列化该字段，避免无限递归
      */
     // @OneToOne 一对一的关系，casacde 联级操作  fetch 加载数据策略
