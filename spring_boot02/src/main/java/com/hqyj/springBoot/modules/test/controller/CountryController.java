@@ -30,10 +30,19 @@ public class CountryController {
     }
 
     /**
-     * 127.0.0.1/api/country?countryName=China ---- get
+     * a127.0.0.1/api/country?countryName=Chin ---- get
      */
     @GetMapping("/country")
     public Country getCountryByCountryName(@RequestParam String countryName) {
         return countryServcie.getCountryByCountryName(countryName);
+    }
+
+    /*
+    * 127.0.0.1/api/redis/country/522
+    * */
+    //redis
+    @GetMapping("/redis/country/{countryId}")
+    public Country mograteCountryByRedis(@PathVariable int countryId){
+        return countryServcie.mograteCountryByRedis(countryId);
     }
 }

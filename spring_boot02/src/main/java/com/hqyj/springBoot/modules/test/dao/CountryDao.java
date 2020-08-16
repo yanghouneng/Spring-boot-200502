@@ -22,7 +22,7 @@ public interface CountryDao {
         @Result(column = "country_id", property = "cities",
                 javaType = List.class,
                 many = @Many(select =
-                        "com.hqyj.springBoot.test.dao.CityDao.getCitiesByCountryId"))
+                        "com.hqyj.springBoot.modules.test.dao.CityDao.getCitiesByCountryId"))
     })
     Country getCountryByCountryId(int countryId);
 

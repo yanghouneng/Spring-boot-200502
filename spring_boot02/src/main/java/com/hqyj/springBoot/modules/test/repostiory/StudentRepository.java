@@ -1,6 +1,7 @@
 package com.hqyj.springBoot.modules.test.repostiory;
 
 import com.hqyj.springBoot.modules.test.entity.Student;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
+@Mapper
 public interface StudentRepository extends JpaRepository<Student,Integer> {
 
     /*
@@ -34,5 +36,5 @@ public interface StudentRepository extends JpaRepository<Student,Integer> {
             "and s.studentCard.cardId = :cardId")*/
     @Query(nativeQuery = true,value = "select * from h_student s where s.student_name = :studentName" +
             "and card_id= :cardId")
-    List<Student> getStudentByParams(@Param("studentName") String studentName, @Param("carId") int carId);
+    List<Student> getStudentByParams(@Param("studentName") String studentName, @Param("cardId") int cardId);
 }
