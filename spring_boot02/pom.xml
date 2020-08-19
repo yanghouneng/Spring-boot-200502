@@ -101,6 +101,13 @@
         </dependency>
         <!--thymeleaf结束-->
 
+        <!--spring监控开始-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--spring监控结束-->
+
     </dependencies>
 
     <build>
